@@ -1,0 +1,64 @@
+<h1>Purchased Products</h1>
+
+<h2>Last 7 days</h2>
+<ul>
+    {% for order in purchased_data.week_orders %}
+    {% if order.products.exists %}
+    <li>Order {{ order.id }} - {{ order.order_date }} - Client: {{ order.client.name }}</li>
+    <ul>
+        {% for product in order.products.all %}
+        <li>{{ product.name_pr }} - Price: {{ product.price }} - Quantity: {{ product.quantity }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <li>Order {{ order.id }} - {{ order.order_date }} - Client: {{ order.client.name }}</li>
+    <ul>
+        <li>No products in this order.</li>
+    </ul>
+    {% endif %}
+    {% empty %}
+    <li>No orders in the last 7 days.</li>
+    {% endfor %}
+</ul>
+
+<h2>Last 30 days</h2>
+<ul>
+    {% for order in purchased_data.month_orders %}
+    {% if order.products.exists %}
+    <li>Order {{ order.id }} - {{ order.order_date }} - Client: {{ order.client.name }}</li>
+    <ul>
+        {% for product in order.products.all %}
+        <li>{{ product.name_pr }} - Price: {{ product.price }} - Quantity: {{ product.quantity }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <li>Order {{ order.id }} - {{ order.order_date }} - Client: {{ order.client.name }}</li>
+    <ul>
+        <li>No products in this order.</li>
+    </ul>
+    {% endif %}
+    {% empty %}
+    <li>No orders in the last 30 days.</li>
+    {% endfor %}
+</ul>
+
+<h2>Last 365 days</h2>
+<ul>
+    {% for order in purchased_data.year_orders %}
+    {% if order.products.exists %}
+    <li>Order {{ order.id }} - {{ order.order_date }} - Client: {{ order.client.name }}</li>
+    <ul>
+        {% for product in order.products.all %}
+        <li>{{ product.name_pr }} - Price: {{ product.price }} - Quantity: {{ product.quantity }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <li>Order {{ order.id }} - {{ order.order_date }} - Client: {{ order.client.name }}</li>
+    <ul>
+        <li>No products in this order.</li>
+    </ul>
+    {% endif %}
+    {% empty %}
+    <li>No orders in the last 365 days.</li>
+    {% endfor %}
+</ul>
