@@ -3,3 +3,4 @@
 *.sqlite3
 *.log
 *.pyc
+echo 'set -a; source ~/myproject/.env; set +a' >> ~/.virtualenvs/virtualenv/bin/postactivate

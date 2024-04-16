@@ -52,7 +52,7 @@ INTERNAL_IPS = [
 
 
 MIDDLEWARE = [
-   
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -60,7 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware'
+    
     
 
 ]
@@ -92,10 +92,10 @@ WSGI_APPLICATION = 'myproj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'prodact$default',
-        'USER': 'prodact',
+        'NAME': 'Prodaction$default',
+        'USER': 'Prodaction',
         'PASSWORD': os.getenv('MYSQL_PASSWORD'),
-        'HOST': 'prodact.mysql.pythonanywhere-services.com',
+        'HOST': 'Prodaction.mysql.pythonanywhere-services.com',
         'OPTIONS': {
             'init_command': "SET NAMES 'utf8mb4';SET sql_mode='STRICT_TRANS_TABLES'",
             'charset': 'utf8mb4',
